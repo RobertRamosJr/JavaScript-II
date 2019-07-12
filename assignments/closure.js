@@ -1,5 +1,16 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function makeFunc() {
+  var name = "Robert";
+  function displayName() {
+    console.log(name);
+  }
+  return displayName;
+}
+
+var myFunc = makeFunc();
+myFunc();
+
 
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
@@ -12,6 +23,19 @@ const counter = () => {
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
+
+// solution:
+
+const counter = function () {
+  let count = 0
+  return function increment () {
+    count++
+    console.log(count)
+  } 
+}
+
+const newCounter = counter()
+newCounter()
 
 // ==== Challenge 3: Create a counter function with an object that can increment and decrement ====
 const counterFactory = () => {
